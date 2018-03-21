@@ -45,7 +45,7 @@
 		B190DB071FDA885400F273D1 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				B19FD9A81FD51BE800A0864A /* OpenTerminal */,
+				B19FD9A81FD51BE800A0864A /* PodInstall */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -69,7 +69,7 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		B19FD9A81FD51BE800A0864A /* OpenTerminal */ = {
+		B19FD9A81FD51BE800A0864A /* PodInstall */ = {
 			isa = PBXGroup;
 			children = (
 				B19FD9A91FD51BE800A0864A /* main.swift */,
@@ -78,7 +78,7 @@
 				B19FD9D21FD5389100A0864A /* OpenTerminalApp.entitlements */,
 				B19FD9FC1FD5A06300A0864A /* ScriptingBridge */,
 			);
-			path = OpenTerminal;
+			path = PodInstall;
 			sourceTree = "<group>";
 		};
 		B19FD9B01FD51BFD00A0864A /* Frameworks */ = {
