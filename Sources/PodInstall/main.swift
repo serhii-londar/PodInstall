@@ -22,12 +22,12 @@ if selectionItems.isEmpty {
 	let item = container.get() as! FinderItem
 	fileUrls = [item.URL!]
 } else {
-	fileUrls = selectionItems.flatMap { $0 as? FinderApplicationFile }.flatMap { $0.URL }
+	fileUrls = selectionItems.compactMap { $0 as? FinderApplicationFile }.compactMap { $0.URL }
 }
 
 
 
-fileUrls.flatMap { URL(string: $0) }.forEach { url in
+fileUrls.compactMap { URL(string: $0) }.forEach { url in
 	terminal.activate()
 	let path = NSString.path(withComponents: url.pathComponents)
 	let script = "cd '\(path)'; clear; pod install"
