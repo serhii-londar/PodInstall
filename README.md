@@ -4,7 +4,7 @@ Small application to open terminal and perform pod install in current finder fol
 Support macOS 10.12
 
 ### Installation
-You can build it from sources or download latest release.
+You can build it from sources or download [latest release](https://github.com/serhii-londar/PodInstall/releases).
 
 ### How to use
 
