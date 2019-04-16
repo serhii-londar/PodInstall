@@ -7,19 +7,33 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		9236C2612061DE9600050A06 /* Terminal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9236C2602061DE9600050A06 /* Terminal.swift */; };
-		9236C2632061E08C00050A06 /* SBObjectProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9236C2622061E08C00050A06 /* SBObjectProtocol.swift */; };
-		9236C2652061E0B800050A06 /* SBApplicationProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9236C2642061E0B800050A06 /* SBApplicationProtocol.swift */; };
 		9236C2672061E78D00050A06 /* cocoapods.svg in Resources */ = {isa = PBXBuildFile; fileRef = 9236C2662061E78D00050A06 /* cocoapods.svg */; };
 		B19FD9CD1FD5389100A0864A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B19FD9CC1FD5389100A0864A /* Assets.xcassets */; };
 		B19FD9D61FD538B000A0864A /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = B19FD9A91FD51BE800A0864A /* main.swift */; };
-		B19FD9FE1FD5A14700A0864A /* Finder.swift in Sources */ = {isa = PBXBuildFile; fileRef = B19FD9FD1FD5A14700A0864A /* Finder.swift */; };
+		C832C1CA2216E8810000BCE5 /* ScriptingBridge.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B19FD9B11FD51BFE00A0864A /* ScriptingBridge.framework */; };
+		C832C1CB2216E8810000BCE5 /* ScriptingBridge.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B19FD9B11FD51BFE00A0864A /* ScriptingBridge.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		C832C1CD2216E8860000BCE5 /* CoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B19FD9E81FD5538800A0864A /* CoreServices.framework */; };
+		C832C1CE2216E8860000BCE5 /* CoreServices.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B19FD9E81FD5538800A0864A /* CoreServices.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		C832C20C2216EC4B0000BCE5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C832C20B2216EC4B0000BCE5 /* Foundation.framework */; };
+		C832C20F2216EDEC0000BCE5 /* TerminalWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = C832C20E2216EDEC0000BCE5 /* TerminalWrapper.m */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		C832C1CC2216E8820000BCE5 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				C832C1CB2216E8810000BCE5 /* ScriptingBridge.framework in Embed Frameworks */,
+				C832C1CE2216E8860000BCE5 /* CoreServices.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
-		9236C2602061DE9600050A06 /* Terminal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Terminal.swift; sourceTree = "<group>"; };
-		9236C2622061E08C00050A06 /* SBObjectProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SBObjectProtocol.swift; sourceTree = "<group>"; };
-		9236C2642061E0B800050A06 /* SBApplicationProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SBApplicationProtocol.swift; sourceTree = "<group>"; };
 		9236C2662061E78D00050A06 /* cocoapods.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = cocoapods.svg; sourceTree = "<group>"; };
 		B19FD9A91FD51BE800A0864A /* main.swift */ = {isa = PBXFileReference; indentWidth = 4; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		B19FD9B11FD51BFE00A0864A /* ScriptingBridge.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ScriptingBridge.framework; path = System/Library/Frameworks/ScriptingBridge.framework; sourceTree = SDKROOT; };
@@ -28,7 +42,12 @@
 		B19FD9D11FD5389100A0864A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B19FD9D21FD5389100A0864A /* OpenTerminalApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = OpenTerminalApp.entitlements; sourceTree = "<group>"; };
 		B19FD9E81FD5538800A0864A /* CoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreServices.framework; path = System/Library/Frameworks/CoreServices.framework; sourceTree = SDKROOT; };
-		B19FD9FD1FD5A14700A0864A /* Finder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Finder.swift; sourceTree = "<group>"; };
+		C832C1C32216DDC40000BCE5 /* Terminal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Terminal.h; sourceTree = "<group>"; };
+		C832C1C42216DDF00000BCE5 /* PodInstall-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PodInstall-Bridging-Header.h"; sourceTree = "<group>"; };
+		C832C1C82216DF7A0000BCE5 /* Finder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Finder.h; sourceTree = "<group>"; };
+		C832C20B2216EC4B0000BCE5 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		C832C20D2216EDEC0000BCE5 /* TerminalWrapper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TerminalWrapper.h; sourceTree = "<group>"; };
+		C832C20E2216EDEC0000BCE5 /* TerminalWrapper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TerminalWrapper.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -36,6 +55,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C832C20C2216EC4B0000BCE5 /* Foundation.framework in Frameworks */,
+				C832C1CA2216E8810000BCE5 /* ScriptingBridge.framework in Frameworks */,
+				C832C1CD2216E8860000BCE5 /* CoreServices.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -77,6 +99,9 @@
 				B19FD9D11FD5389100A0864A /* Info.plist */,
 				B19FD9D21FD5389100A0864A /* OpenTerminalApp.entitlements */,
 				B19FD9FC1FD5A06300A0864A /* ScriptingBridge */,
+				C832C1C42216DDF00000BCE5 /* PodInstall-Bridging-Header.h */,
+				C832C20D2216EDEC0000BCE5 /* TerminalWrapper.h */,
+				C832C20E2216EDEC0000BCE5 /* TerminalWrapper.m */,
 			);
 			path = PodInstall;
 			sourceTree = "<group>";
@@ -84,6 +109,7 @@
 		B19FD9B01FD51BFD00A0864A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				C832C20B2216EC4B0000BCE5 /* Foundation.framework */,
 				B19FD9E81FD5538800A0864A /* CoreServices.framework */,
 				B19FD9B11FD51BFE00A0864A /* ScriptingBridge.framework */,
 			);
@@ -101,10 +127,8 @@
 		B19FD9FC1FD5A06300A0864A /* ScriptingBridge */ = {
 			isa = PBXGroup;
 			children = (
-				B19FD9FD1FD5A14700A0864A /* Finder.swift */,
-				9236C2602061DE9600050A06 /* Terminal.swift */,
-				9236C2622061E08C00050A06 /* SBObjectProtocol.swift */,
-				9236C2642061E0B800050A06 /* SBApplicationProtocol.swift */,
+				C832C1C82216DF7A0000BCE5 /* Finder.h */,
+				C832C1C32216DDC40000BCE5 /* Terminal.h */,
 			);
 			path = ScriptingBridge;
 			sourceTree = "<group>";
@@ -119,6 +143,7 @@
 				B19FD9C41FD5389100A0864A /* Sources */,
 				B19FD9C51FD5389100A0864A /* Frameworks */,
 				B19FD9C61FD5389100A0864A /* Resources */,
+				C832C1CC2216E8820000BCE5 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -141,6 +166,7 @@
 				TargetAttributes = {
 					B19FD9C71FD5389100A0864A = {
 						CreatedOnToolsVersion = 9.1;
+						LastSwiftMigration = 1010;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.Sandbox = {
@@ -185,11 +211,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9236C2612061DE9600050A06 /* Terminal.swift in Sources */,
-				B19FD9FE1FD5A14700A0864A /* Finder.swift in Sources */,
-				9236C2652061E0B800050A06 /* SBApplicationProtocol.swift in Sources */,
 				B19FD9D61FD538B000A0864A /* main.swift in Sources */,
-				9236C2632061E08C00050A06 /* SBObjectProtocol.swift in Sources */,
+				C832C20F2216EDEC0000BCE5 /* TerminalWrapper.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -310,6 +333,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
@@ -317,10 +341,14 @@
 				INFOPLIST_FILE = "$(SRCROOT)/Sources/PodInstall/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
-				PRODUCT_BUNDLE_IDENTIFIER = com.slon.PodInstall;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.slon.test;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_VERSION = 4.0;
+				SWIFT_OBJC_BRIDGING_HEADER = "Sources/PodInstall/PodInstall-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.2;
+				VALID_ARCHS = "i386 x86_64";
 			};
 			name = Debug;
 		};
@@ -328,6 +356,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
@@ -336,10 +365,12 @@
 				INFOPLIST_FILE = "$(SRCROOT)/Sources/PodInstall/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
-				PRODUCT_BUNDLE_IDENTIFIER = com.slon.PodInstall;
+				PRODUCT_BUNDLE_IDENTIFIER = com.slon.test;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_VERSION = 4.0;
+				SWIFT_OBJC_BRIDGING_HEADER = "Sources/PodInstall/PodInstall-Bridging-Header.h";
+				SWIFT_VERSION = 4.2;
+				VALID_ARCHS = "i386 x86_64";
 			};
 			name = Release;
 		};

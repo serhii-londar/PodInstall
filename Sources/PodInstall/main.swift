@@ -8,37 +8,39 @@
 
 import ScriptingBridge
 
-let finder = SBApplication(bundleIdentifier: "com.apple.Finder")! as FinderApplication
-let terminal = SBApplication(bundleIdentifier: "com.apple.Terminal")! as TerminalApplication
+let terminal = SBApplication(bundleIdentifier: "com.apple.Terminal")
+terminal?.activate()
+let finder = SBApplication(bundleIdentifier: "com.apple.Finder") as? FinderApplication 
+//let terminal = SBApplication(bundleIdentifier: "com.apple.Terminal") as! TerminalApplication
 
-let selection = finder.selection!
-let selectionItems = selection.get() as! Array<AnyObject>
+let selection = finder?.selection!
+let selectionItems = selection?.get() as? Array<AnyObject>
 
 let fileUrls: Array<String>
 
-if selectionItems.isEmpty {
-	let window = finder.windows!().firstObject as! FinderFinderWindow
+if (selectionItems?.isEmpty)! {
+	let window = finder?.windows().firstObject as! FinderFinderWindow
 	let container = window.target!
 	let item = container.get() as! FinderItem
-	fileUrls = [item.URL!]
+	fileUrls = [item.url!]
 } else {
-	fileUrls = selectionItems.compactMap { $0 as? FinderApplicationFile }.compactMap { $0.URL }
+	fileUrls = selectionItems?.compactMap { $0 as? FinderApplicationFile }.compactMap { $0.url } ?? []
 }
 
 
 
 fileUrls.compactMap { URL(string: $0) }.forEach { url in
-	terminal.activate()
+	terminal?.activate()
 	let path = NSString.path(withComponents: url.pathComponents)
-	let script = "cd '\(path)'; clear; pod install"
+	let script = "cd '\(path)'; clear; ls -la; pod install"
 	
-	let terminalWindow = terminal.windows!().object(atLocation: 1) as! TerminalWindow
+	let terminalWindow = (terminal as! TerminalApplication).windows().object(atLocation: 1) as! TerminalWindow
 	let tab = terminalWindow.selectedTab! as TerminalTab
 	
-	if !terminalWindow.frontmost! || tab.busy! {
-		let _ = terminal.doScript!(script, in:nil)
+	if !terminalWindow.frontmost || tab.busy {
+		let _ = (terminal as! TerminalApplication).doScript(script, in:nil)
 	} else {
-		let _ = terminal.doScript!(script, in:terminalWindow)
+		let _ = (terminal as! TerminalApplication).doScript(script, in:terminalWindow)
 	}
 }
 
